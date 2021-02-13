@@ -39,8 +39,50 @@ function getPasswordOptions() {
     alert('Must pick at least one character type.');
     return;
   }
+
+  var getPasswordOptions = {
+    length: length,
+    hasNumericCharacters: hasNumericCharacters,
+    hasSpecialCharacters: hasSpecialCharacters,
+    hasUpperCasedCharacters: hasUpperCasedCharacters,
+    hasLowerCasedCharacters: hasLowerCasedCharacters,
+  };
+  return getPasswordOptions;
   
 }
+
+function getRandom(arr) {
+  var randIndex = Math.floor(Math.random() * arr.length);
+  var randElement = arr[randIndex]
+  return randElement;
+}
+function generatePassword() {
+  var options = getPasswordOptions();
+  var result = [];
+  var possibleCharacters = [];
+  var guaranteedCharacters = [];
+
+  if (options.hasNumericCharacters) {
+    possibleCharacters = possibleCharacters.concat(numericCharacters);
+    guaranteedCharacters.push(getRandom(numericCharacters));
+  }
+
+  if (options.hasSpecialCharacters) {
+    possibleCharacters = possibleCharacters.concat(specialCharacters);
+    guaranteedCharacters.push(getRandom(specialCharacters));
+  }
+
+  if (options.hasUpperCasedCharacters) {
+    possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
+    guaranteedCharacters.push(getRandom(upperCasedCharacters));
+  }
+
+  if (options.hasLowerCasedCharacters) {
+    possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
+    guaranteedCharacters.push(getRandom(upperCasedCharacters));
+  }
+}
+
 
 
 
