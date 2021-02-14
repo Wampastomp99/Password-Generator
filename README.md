@@ -7,3 +7,6 @@ the password-generatior was hard to get right there are alot of ifs but i wa abl
 ##screenshot 
 
 ![](assets/images/password.png)
+
+## live link
+ https://wampastomp99.github.io/Password-Generator/.
