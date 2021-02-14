@@ -81,32 +81,22 @@ function generatePassword() {
     possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
     guaranteedCharacters.push(getRandom(upperCasedCharacters));
   }
+
+  for (var i = 0; i < options.length; i++) {
+    var possibleCharacter = getRandom(possibleCharacters);
+    result.push(possibleCharacter);
+  }
+
+  for (var i = 0; i < guaranteedCharacters.length; i++) {
+    result[i] = guaranteedCharacters[i];
+  }
+
+  return result.join('');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
+var generateBtn = document.querySelector('#generate');
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
+  var passwordText = document.querySelector('#password');
   passwordText.value = password;
-
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener('click', writePassword);
