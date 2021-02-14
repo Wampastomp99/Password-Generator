@@ -6,4 +6,4 @@ the password-generatior was hard to get right there are alot of ifs but i wa abl
 
 ##screenshot 
 
-![](images/password.png)
+![](assets/images/password.png)
